@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="ValidationEngine\" />
     <Folder Include="ShoppingBasket\" />
-    <Folder Include="PromotionEngine\" />
   </ItemGroup>
 
   <ItemGroup>
