@@ -25,7 +25,8 @@ namespace CheckoutKata.UnitTests.PromotionEngine
         private readonly IItemPriceCalculatorService _sut;
         private readonly IPromotionRepository _promotionRepository;
         private readonly IValidationService _validationEngine;
-        
+        private readonly IDiscountService _discountService;
+
         #endregion
 
         #region Constructor
@@ -34,8 +35,9 @@ namespace CheckoutKata.UnitTests.PromotionEngine
         {
             _promotionRepository = Substitute.For<IPromotionRepository>();
             _validationEngine = Substitute.For<IValidationService>();
-            
-            _sut = new ItemPriceCalculatorService(_promotionRepository, _validationEngine);
+            _discountService = Substitute.For<IDiscountService>();
+
+            _sut = new ItemPriceCalculatorService(_promotionRepository, _validationEngine, _discountService);
         }
 
         #endregion

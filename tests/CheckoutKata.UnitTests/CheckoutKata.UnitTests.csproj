@@ -22,10 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ShoppingBasket\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\CheckoutKata\CheckoutKata.csproj" />
   </ItemGroup>
   

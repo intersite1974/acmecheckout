@@ -10,15 +10,18 @@ namespace CheckoutKata.PromotionEngine
 
         private readonly IPromotionRepository _promotionRepository;
         private readonly IValidationService _validationEngine;
+        private readonly IDiscountService _discountService;
 
         #endregion
 
         #region Constructor
 
-        public ItemPriceCalculatorService(IPromotionRepository promotionRepository, IValidationService validationEngine)
+        public ItemPriceCalculatorService(IPromotionRepository promotionRepository, IValidationService validationEngine, 
+            IDiscountService discountService)
         {
             _promotionRepository = promotionRepository;
             _validationEngine = validationEngine;
+            _discountService = discountService;
         }
 
         #endregion
@@ -67,7 +70,7 @@ namespace CheckoutKata.PromotionEngine
                         else
                         {
                             // X quantity break, X for "N"
-                            // TODO
+                            totalPrice -= _discountService.PlainVolumeDiscount(item.UnitPrice, itemPromotion.PromotionPrice);
                         }
 
                         qtyBreakCounter = 1;
@@ -80,7 +83,7 @@ namespace CheckoutKata.PromotionEngine
                 }
             }
 
-            return totalPrice;
+            return Math.Round(totalPrice, 2);
         }
 
         #endregion
