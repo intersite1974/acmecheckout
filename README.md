@@ -13,5 +13,5 @@ Constructed using:
 Lots to add if this was to be productionised.. e.g.
 
 - Discount calculation algorithms could be via a Strategy Pattern and selected as appropriate (validation included)
-- Decorator pattern could be used to restructure things to allow for furture amendements and add-ins as a business grows
+- Decorator pattern could be used to restructure things to allow for furture amendements and add-ins as a business grows - price is a classic, more as things progress
 - Ardalis Guard Clauses could protect methods instead of the simplistic checks currently present
