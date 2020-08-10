@@ -16,7 +16,8 @@
 
         public decimal PercentageDiscount(int quantity, decimal unitPrice, decimal promotionPercentage)
         {
-            return unitPrice - (promotionPercentage / 100) * (quantity * unitPrice);
+            var totalUnitPriceExcDiscount = quantity * unitPrice;
+            return unitPrice - ((promotionPercentage / 100) * totalUnitPriceExcDiscount);
         }
 
         #endregion

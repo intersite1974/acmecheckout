@@ -62,10 +62,12 @@ namespace CheckoutKata.PromotionEngine
                 {
                     if (qtyBreakCounter == itemPromotion.QuantityTrigger)
                     {
+                        // Here, a refinement could be some form of Strategy pattern to detect the appropriate
+                        // relevent discount algorithm to use.. For now we will use how we have set the promotion fields
                         if (itemPromotion.PromotionPercentageReduction > 0.00M)
                         {
-                            // Percentage off promotion
-                            totalPrice += _discountService.PercentageDiscount(itemPromotion.QuantityTrigger, item.UnitPrice, itemPromotion.PromotionPercentageReduction);
+                            // Percentage off promotion by percentage
+                            totalPrice -= _discountService.PercentageDiscount(itemPromotion.QuantityTrigger, item.UnitPrice, itemPromotion.PromotionPercentageReduction);
                         }
                         else
                         {

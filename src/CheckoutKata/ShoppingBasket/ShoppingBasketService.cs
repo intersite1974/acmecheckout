@@ -83,7 +83,8 @@ namespace CheckoutKata.ShoppingBasket
 
             foreach (var basketItem in _basketItems)
             {
-                totalCostOfBasket += _itemPriceCalculator.CalculateItemPrice(basketItem.Key, basketItem.Value);
+                var extraForCart = _itemPriceCalculator.CalculateItemPrice(basketItem.Key, basketItem.Value);
+                totalCostOfBasket += extraForCart;
             }
 
             return Math.Round(totalCostOfBasket, 2);

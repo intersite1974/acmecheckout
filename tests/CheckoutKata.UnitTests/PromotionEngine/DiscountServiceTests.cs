@@ -41,19 +41,6 @@ namespace CheckoutKata.UnitTests.PromotionEngine
             result.Should().Be(expectedValue);
         }
 
-        [Theory]
-        [InlineData(5, 4.99, 25.00, 1.99)]
-        [InlineData(7, 3.99, 15.00, 1.99)]
-        [InlineData(10, 14.99, 10.00, 1.99)]
-        public void PercentageDiscount_OK(int quantity, decimal unitPrice, decimal promotionPercentage, decimal expectedValue)
-        {
-            // Act
-            var result = _sut.PercentageDiscount(quantity, unitPrice, promotionPercentage);
-
-            // Assert
-            result.Should().Be(expectedValue);
-        }
-
         #endregion
     }
 }
