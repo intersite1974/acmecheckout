@@ -65,7 +65,7 @@ namespace CheckoutKata.PromotionEngine
                         if (itemPromotion.PromotionPercentageReduction > 0.00M)
                         {
                             // Percentage off promotion
-                            //TODO
+                            totalPrice += _discountService.PercentageDiscount(itemPromotion.QuantityTrigger, item.UnitPrice, itemPromotion.PromotionPercentageReduction);
                         }
                         else
                         {
